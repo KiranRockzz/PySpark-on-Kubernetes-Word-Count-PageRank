@@ -1,0 +1,2 @@
+ROM bitnami/spark:latest
+COPY pagerank.py /opt/bitnami/spark/app/
