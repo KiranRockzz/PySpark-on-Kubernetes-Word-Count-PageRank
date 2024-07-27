@@ -1,0 +1,2 @@
+FROM bitnami/spark:latest
+COPY word_count.py /opt/bitnami/spark/app/
