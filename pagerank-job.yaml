@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pagerank
+spec:
+  template:
+    spec:
+      containers:
+      - name: spark-pagerank
+        image: sainakka/week-7:pagerank
+        command: ["spark-submit", "/opt/bitnami/spark/app/pagerank.py", "path/to/pagerank_data.txt", "10"]
+      restartPolicy: OnFailure
+
+
+
