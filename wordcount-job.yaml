@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wordcount
+spec:
+  template:
+    spec:
+      containers:
+      - name: spark-wordcount
+        image: sainakka/week-7:wordcount
+        command: ["spark-submit", "/opt/bitnami/spark/app/word_count.py"]
+      restartPolicy: OnFailure
